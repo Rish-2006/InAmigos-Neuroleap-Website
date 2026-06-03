@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog — NeuroLeap</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/shared.css">
+<style>
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.blog-card{background:var(--card);border:1px solid var(--border);border-radius:8px;overflow:hidden;transition:all .35s;text-decoration:none;color:var(--text);display:block}
+.blog-card:hover{transform:translateY(-5px);border-color:rgba(0,245,160,.25);box-shadow:0 20px 60px rgba(0,0,0,.4)}
+.blog-thumb{height:180px;display:flex;align-items:center;justify-content:center;font-size:56px;position:relative}
+.bt1{background:linear-gradient(135deg,#0d1f0d,#0a1a2a)}
+.bt2{background:linear-gradient(135deg,#1a0d1a,#0d0d1f)}
+.bt3{background:linear-gradient(135deg,#1a1200,#0d0a00)}
+.bt4{background:linear-gradient(135deg,#001a1a,#000d1a)}
+.bt5{background:linear-gradient(135deg,#1a0a00,#1a001a)}
+.bt6{background:linear-gradient(135deg,#001a10,#001210)}
+.blog-cat{position:absolute;top:12px;left:12px;background:rgba(0,245,160,.15);color:var(--accent);border:1px solid rgba(0,245,160,.3);font-family:'DM Mono',monospace;font-size:10px;letter-spacing:1.5px;padding:4px 10px;border-radius:2px;text-transform:uppercase}
+.blog-body{padding:24px}
+.blog-date{font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);letter-spacing:1px;margin-bottom:10px}
+.blog-title{font-size:18px;font-weight:600;line-height:1.4;margin-bottom:10px}
+.blog-excerpt{font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:16px}
+.blog-author{display:flex;align-items:center;gap:10px;font-size:12px;color:var(--muted);padding-top:16px;border-top:1px solid var(--border)}
+.blog-avatar{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px}
+.ba1{background:linear-gradient(135deg,#00f5a0,#006638)}
+.ba2{background:linear-gradient(135deg,#7c3aed,#3b0764)}
+.ba3{background:linear-gradient(135deg,#f59e0b,#78350f)}
+.featured-post{display:grid;grid-template-columns:1.2fr 1fr;gap:0;background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin-bottom:48px;text-decoration:none;color:var(--text);transition:all .3s}
+.featured-post:hover{border-color:rgba(0,245,160,.25);box-shadow:0 20px 60px rgba(0,0,0,.4)}
+.featured-thumb{background:linear-gradient(135deg,#0d1f0d,#0a1a2a);display:flex;align-items:center;justify-content:center;font-size:80px;min-height:300px}
+.featured-body{padding:48px}
+.featured-tag{font-family:'DM Mono',monospace;font-size:11px;color:var(--accent);letter-spacing:2px;text-transform:uppercase;margin-bottom:12px}
+.featured-title{font-family:'Bebas Neue',sans-serif;font-size:36px;letter-spacing:1px;line-height:1.1;margin-bottom:16px}
+.featured-excerpt{color:var(--muted);font-size:14px;line-height:1.8;margin-bottom:24px}
+@media(max-width:900px){.blog-grid{grid-template-columns:1fr}.featured-post{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="cursor-dot" id="dot"></div>
+<div class="cursor-ring" id="ring"></div>
+<nav>
+  <a href="index.html" class="logo">NEURO<span>LEAP</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="courses.html">Courses</a></li>
+    <li><a href="blog.html" class="active">Blog</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="contact.html" class="nav-cta">Start Free →</a>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-bg"></div><div class="page-hero-glow"></div>
+  <div class="section-label">Insights & Stories</div>
+  <h1 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(64px,8vw,110px);line-height:.9;position:relative">THE NEURO<span style="color:var(--accent)">LEAP</span><br>JOURNAL</h1>
+  <p style="color:var(--muted);font-size:17px;max-width:560px;line-height:1.8;margin-top:24px;position:relative">Deep dives on learning science, career strategy, AI trends, and success stories from our community of 2.4M learners.</p>
+</div>
+
+<section style="background:var(--bg)">
+  <a href="blog-post.html" class="featured-post reveal">
+    <div class="featured-thumb">🧠</div>
+    <div class="featured-body">
+      <div class="featured-tag">Featured · Learning Science</div>
+      <div class="featured-title">HOW THE NEUROSYNC™ ENGINE LEARNS HOW YOU LEARN</div>
+      <div class="featured-excerpt">A deep dive into the 200+ signals our AI tracks behind the scenes — and why this changes everything about how we teach skills in 2025.</div>
+      <div style="font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);letter-spacing:1px;margin-bottom:16px">May 28, 2025 · 8 min read</div>
+      <span class="btn-primary" style="font-size:13px;padding:12px 24px">Read Article →</span>
+    </div>
+  </a>
+
+  <div class="blog-grid">
+    <a href="blog-post.html" class="blog-card reveal"><div class="blog-thumb bt1"><span>🚀</span><span class="blog-cat">Career</span></div><div class="blog-body"><div class="blog-date">May 22, 2025 · 5 min read</div><div class="blog-title">From ₹4 LPA to ₹28 LPA: Riya's 8-Month Story</div><div class="blog-excerpt">How a BPO employee used NeuroLeap's Full-Stack bootcamp to completely reinvent her career trajectory.</div><div class="blog-author"><div class="blog-avatar ba1">R</div>Riya Sharma · Alumni Story</div></div></a>
+    <a href="blog-post.html" class="blog-card reveal"><div class="blog-thumb bt2"><span>🤖</span><span class="blog-cat" style="background:rgba(124,58,237,.15);color:#a78bfa;border-color:rgba(124,58,237,.3)">AI Trends</span></div><div class="blog-body"><div class="blog-date">May 18, 2025 · 6 min read</div><div class="blog-title">The 5 AI Skills Employers Will Pay a Premium for in 2026</div><div class="blog-excerpt">Based on 50,000+ job postings analyzed: the exact skills that command the highest salaries right now.</div><div class="blog-author"><div class="blog-avatar ba2">A</div>Dr. Meera Nair · Co-Founder</div></div></a>
+    <a href="blog-post.html" class="blog-card reveal"><div class="blog-thumb bt3"><span>📊</span><span class="blog-cat" style="background:rgba(245,158,11,.15);color:var(--accent3);border-color:rgba(245,158,11,.3)">Data Science</span></div><div class="blog-body"><div class="blog-date">May 12, 2025 · 7 min read</div><div class="blog-title">Why 90% of Data Analysts Are Learning the Wrong SQL</div><div class="blog-excerpt">Window functions, CTEs, and query optimization — the skills that separate junior from senior data analysts.</div><div class="blog-author"><div class="blog-avatar ba3">K</div>Karthik Venkat · Data Lead</div></div></a>
+    <a href="blog-post.html" class="blog-card reveal"><div class="blog-thumb bt4"><span>🧘</span><span class="blog-cat">Learning Science</span></div><div class="blog-body"><div class="blog-date">May 8, 2025 · 4 min read</div><div class="blog-title">Why Studying for 4 Hours Beats 8 Hours Every Time</div><div class="blog-excerpt">Cognitive load theory, spaced repetition, and the hard science behind NeuroLeap's 3× faster learning claim.</div><div class="blog-author"><div class="blog-avatar ba1">M</div>Dr. Meera Nair · Neuroscience</div></div></a>
+    <a href="blog-post.html" class="blog-card reveal"><div class="blog-thumb bt5"><span>🔐</span><span class="blog-cat" style="background:rgba(255,71,87,.15);color:#ff4757;border-color:rgba(255,71,87,.3)">Cybersecurity</span></div><div class="blog-body"><div class="blog-date">May 2, 2025 · 6 min read</div><div class="blog-title">India's Cybersecurity Talent Gap Is Massive — and Lucrative</div><div class="blog-excerpt">With only 50,000 certified professionals for 500,000 open roles, the opportunity for new entrants has never been bigger.</div><div class="blog-author"><div class="blog-avatar ba2">S</div>Suresh Kumar · Security Expert</div></div></a>
+    <a href="blog-post.html" class="blog-card reveal"><div class="blog-thumb bt6"><span>💼</span><span class="blog-cat">Career</span></div><div class="blog-body"><div class="blog-date">Apr 28, 2025 · 5 min read</div><div class="blog-title">How to Negotiate Your First Tech Salary (With Scripts)</div><div class="blog-excerpt">Real scripts, real numbers, and real tactics from our Career Launch coaches who've helped 10,000+ learners negotiate offers.</div><div class="blog-author"><div class="blog-avatar ba3">P</div>Priya Khanna · VP Growth</div></div></a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand"><a href="index.html" class="logo">NEURO<span>LEAP</span></a><p>Where neuroscience meets artificial intelligence to redefine how humans learn, grow, and succeed.</p></div>
+    <div class="footer-col"><h4>Platform</h4><a href="courses.html">All Courses</a><a href="services.html#mentorship">Live Sessions</a><a href="services.html#adaptive">AI Mentorship</a><a href="services.html#certificates">Certificates</a><a href="services.html#career">Career Launch</a></div>
+    <div class="footer-col"><h4>Company</h4><a href="about.html">About Us</a><a href="about.html#team">Our Team</a><a href="blog.html">Blog</a><a href="careers.html">Careers</a><a href="about.html#press">Press</a></div>
+    <div class="footer-col"><h4>Support</h4><a href="contact.html">Help Center</a><a href="contact.html">Contact Us</a><a href="about.html#community">Community</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Use</a></div>
+  </div>
+  <div class="footer-bottom"><p>© 2025 NeuroLeap Technologies Pvt. Ltd.</p><div class="footer-socials"><a href="#" class="social-link">𝕏</a><a href="#" class="social-link">in</a><a href="#" class="social-link">▶</a><a href="#" class="social-link">ig</a></div></div>
+</footer>
+<script src="assets/shared.js"></script>
+</body>
+</html>

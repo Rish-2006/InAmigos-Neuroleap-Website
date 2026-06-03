@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How NeuroSync™ Learns How You Learn — NeuroLeap Blog</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/shared.css">
+<style>
+.post-layout{display:grid;grid-template-columns:1fr 300px;gap:60px;padding:80px 60px;max-width:1300px;margin:0 auto}
+.post-body h2{font-family:'Bebas Neue',sans-serif;font-size:32px;letter-spacing:1px;margin:40px 0 16px;color:var(--accent)}
+.post-body p{font-size:15px;color:var(--muted);line-height:1.9;margin-bottom:20px}
+.post-body blockquote{border-left:3px solid var(--accent);padding:16px 24px;background:rgba(0,245,160,.04);border-radius:0 6px 6px 0;margin:28px 0;font-size:16px;font-style:italic;color:var(--text)}
+.post-body ul{list-style:none;margin:16px 0 24px;display:flex;flex-direction:column;gap:10px}
+.post-body ul li{font-size:14px;color:var(--muted);display:flex;gap:10px}
+.post-body ul li::before{content:'→';color:var(--accent);flex-shrink:0}
+.post-author{display:flex;align-items:center;gap:16px;padding:24px;background:var(--card);border:1px solid var(--border);border-radius:8px;margin-top:48px}
+.author-av{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#7c3aed,#3b0764);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.sidebar-card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:24px;margin-bottom:20px}
+.sidebar-title{font-family:'Bebas Neue',sans-serif;font-size:18px;letter-spacing:1px;margin-bottom:16px;color:var(--accent)}
+.related-post{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--border);text-decoration:none;color:var(--text);transition:all .2s}
+.related-post:hover{color:var(--accent)}
+.related-post:last-child{border-bottom:none}
+.rp-icon{font-size:24px;flex-shrink:0}
+.rp-title{font-size:13px;font-weight:600;line-height:1.4}
+.rp-date{font-size:11px;color:var(--muted);margin-top:3px;font-family:'DM Mono',monospace}
+@media(max-width:900px){.post-layout{grid-template-columns:1fr;padding:40px 24px}}
+</style>
+</head>
+<body>
+<div class="cursor-dot" id="dot"></div>
+<div class="cursor-ring" id="ring"></div>
+<nav>
+  <a href="index.html" class="logo">NEURO<span>LEAP</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li><li><a href="courses.html">Courses</a></li>
+    <li><a href="blog.html" class="active">Blog</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="contact.html" class="nav-cta">Start Free →</a>
+</nav>
+
+<div style="background:var(--surface);padding:130px 60px 60px;border-bottom:1px solid var(--border);position:relative;overflow:hidden">
+  <div class="page-hero-bg"></div>
+  <div style="font-family:'DM Mono',monospace;font-size:11px;color:var(--muted);margin-bottom:12px;display:flex;gap:8px">
+    <a href="index.html" style="color:var(--muted);text-decoration:none">Home</a>›
+    <a href="blog.html" style="color:var(--muted);text-decoration:none">Blog</a>›
+    <span style="color:var(--accent)">Learning Science</span>
+  </div>
+  <div class="section-label">Learning Science · 8 min read</div>
+  <h1 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(48px,6vw,80px);line-height:.95;max-width:900px;margin-bottom:24px;position:relative">HOW THE NEUROSYNC™ ENGINE<br><span style="color:var(--accent)">LEARNS HOW YOU LEARN</span></h1>
+  <div style="display:flex;align-items:center;gap:16px;position:relative">
+    <div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#7c3aed,#3b0764);display:flex;align-items:center;justify-content:center;font-size:18px">👩‍🔬</div>
+    <div><div style="font-size:14px;font-weight:600">Dr. Meera Nair</div><div style="font-size:12px;color:var(--muted)">CTO & Co-Founder · May 28, 2025</div></div>
+  </div>
+</div>
+
+<div class="post-layout">
+  <article class="post-body reveal">
+    <p>When we started building NeuroLeap in 2022, we had one obsession: why do some people learn a new skill in 4 weeks while others take 4 months — even with the same course, the same instructor, and the same number of study hours?</p>
+    <p>The answer, it turns out, isn't motivation. It isn't even intelligence. It's <strong style="color:var(--text)">how the content is delivered relative to how each individual brain processes and consolidates information.</strong></p>
+    <blockquote>"The medium of delivery matters as much as the content itself. A visual learner watching a text-heavy lecture is fighting their own brain."</blockquote>
+    <h2>THE 200+ SIGNALS WE TRACK</h2>
+    <p>NeuroSync™ doesn't just track whether you got an answer right or wrong. It builds a real-time model of your cognitive state. Here's a small sample of what it monitors:</p>
+    <ul>
+      <li>Time-on-task per concept (too fast = skimming, too slow = confusion)</li>
+      <li>Error pattern analysis — not just what you got wrong, but how you got it wrong</li>
+      <li>Session length and engagement drop-off points</li>
+      <li>Revisit frequency — which concepts you keep coming back to</li>
+      <li>Content format engagement (do you pause videos? Skip them? Rewind?)</li>
+      <li>Time-of-day performance patterns (are you a morning or night learner?)</li>
+    </ul>
+    <h2>THE ADAPTATION LOOP</h2>
+    <p>Every 15 minutes of active learning, NeuroSync™ recalibrates. If it detects rising cognitive load (you're spending 3× longer than average on a concept), it automatically introduces a simpler analogy, a visual explainer, or a "pre-requisite patch" — a micro-lesson that fills in the gap that's causing the struggle.</p>
+    <p>Conversely, if you're breezing through content, it accelerates your path — skipping redundant material and surfacing more challenging problems to keep you in the optimal learning zone (what psychologists call the "zone of proximal development").</p>
+    <blockquote>"We don't just serve you the next lesson. We serve you the next lesson your brain is specifically ready for right now."</blockquote>
+    <h2>SPACED REPETITION AT SCALE</h2>
+    <p>Spaced repetition isn't new — Hermann Ebbinghaus described the "forgetting curve" in 1885. What's new is applying it dynamically, at the individual concept level, across an entire curriculum of 200+ topics simultaneously.</p>
+    <p>NeuroSync™ schedules review sessions based on each learner's personal forgetting curve for each concept. The result: learners retain 3× more at the 30-day mark compared to traditional linear courses.</p>
+    <h2>WHAT THIS MEANS FOR YOU</h2>
+    <p>When you enroll in any NeuroLeap course, your first week is actually a calibration phase. The AI is learning your learning style. By week two, your path is meaningfully different from every other learner in the same course — and that's exactly the point.</p>
+    <div class="post-author">
+      <div class="author-av">👩‍🔬</div>
+      <div>
+        <div style="font-size:15px;font-weight:600">Dr. Meera Nair</div>
+        <div style="font-size:12px;color:var(--muted);margin-top:2px">CTO & Co-Founder, NeuroLeap. PhD in Cognitive Science, IISc Bangalore. Previously ML Research at DeepMind.</div>
+      </div>
+    </div>
+    <div style="margin-top:40px;padding-top:40px;border-top:1px solid var(--border);display:flex;gap:16px">
+      <a href="courses.html" class="btn-primary">Explore Courses →</a>
+      <a href="blog.html" class="btn-ghost">Back to Blog</a>
+    </div>
+  </article>
+
+  <aside>
+    <div class="sidebar-card reveal">
+      <div class="sidebar-title">RELATED POSTS</div>
+      <a href="blog-post.html" class="related-post"><span class="rp-icon">🚀</span><div><div class="rp-title">From ₹4 LPA to ₹28 LPA: Riya's Story</div><div class="rp-date">May 22, 2025</div></div></a>
+      <a href="blog-post.html" class="related-post"><span class="rp-icon">🤖</span><div><div class="rp-title">5 AI Skills Employers Pay a Premium For</div><div class="rp-date">May 18, 2025</div></div></a>
+      <a href="blog-post.html" class="related-post"><span class="rp-icon">🧘</span><div><div class="rp-title">Why 4 Hours Beats 8 Hours of Studying</div><div class="rp-date">May 8, 2025</div></div></a>
+    </div>
+    <div class="sidebar-card reveal">
+      <div class="sidebar-title">START LEARNING</div>
+      <p style="font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:16px">Experience NeuroSync™ firsthand — your first 3 courses are free.</p>
+      <a href="courses.html" class="btn-primary" style="display:block;text-align:center;font-size:13px">Browse Courses →</a>
+    </div>
+  </aside>
+</div>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand"><a href="index.html" class="logo">NEURO<span>LEAP</span></a><p>Where neuroscience meets AI to redefine how humans learn.</p></div>
+    <div class="footer-col"><h4>Platform</h4><a href="courses.html">All Courses</a><a href="services.html">Services</a><a href="services.html#certificates">Certificates</a><a href="services.html#career">Career Launch</a></div>
+    <div class="footer-col"><h4>Company</h4><a href="about.html">About Us</a><a href="blog.html">Blog</a><a href="careers.html">Careers</a></div>
+    <div class="footer-col"><h4>Support</h4><a href="contact.html">Contact Us</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Use</a></div>
+  </div>
+  <div class="footer-bottom"><p>© 2025 NeuroLeap Technologies Pvt. Ltd.</p><div class="footer-socials"><a href="#" class="social-link">𝕏</a><a href="#" class="social-link">in</a><a href="#" class="social-link">▶</a><a href="#" class="social-link">ig</a></div></div>
+</footer>
+<script src="assets/shared.js"></script>
+</body>
+</html>

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Full-Stack Web Development — NeuroLeap</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/shared.css">
+<style>
+.course-layout{display:grid;grid-template-columns:1fr 360px;gap:60px;align-items:start;padding:80px 60px}
+.course-breadcrumb{font-family:'DM Mono',monospace;font-size:12px;color:var(--muted);margin-bottom:24px;display:flex;gap:8px;align-items:center}
+.course-breadcrumb a{color:var(--muted);text-decoration:none;transition:color .2s}.course-breadcrumb a:hover{color:var(--accent)}
+.course-main-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(40px,5vw,64px);line-height:.95;margin-bottom:20px}
+.course-meta-row{display:flex;gap:20px;flex-wrap:wrap;margin-bottom:28px}
+.meta-chip{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--muted)}
+.tabs{display:flex;gap:0;border-bottom:1px solid var(--border);margin-bottom:40px}
+.tab{padding:14px 24px;font-size:14px;font-weight:500;color:var(--muted);cursor:pointer;border-bottom:2px solid transparent;transition:all .2s;letter-spacing:.5px}
+.tab.active{color:var(--accent);border-bottom-color:var(--accent)}
+.tab-content{display:none}.tab-content.active{display:block}
+.module{border:1px solid var(--border);border-radius:6px;margin-bottom:12px;overflow:hidden}
+.module-header{padding:16px 20px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;transition:background .2s}
+.module-header:hover{background:var(--card)}
+.module-title{font-size:15px;font-weight:600}
+.module-meta{font-size:12px;color:var(--muted);font-family:'DM Mono',monospace}
+.module-lessons{padding:0 20px;max-height:0;overflow:hidden;transition:max-height .4s ease,padding .4s}
+.module.open .module-lessons{max-height:400px;padding:12px 20px}
+.lesson{display:flex;align-items:center;gap:12px;padding:10px 0;border-top:1px solid var(--border);font-size:13px;color:var(--muted)}
+.lesson:first-child{border-top:none}
+.lesson-icon{color:var(--accent);font-size:12px}
+.sticky-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:32px;position:sticky;top:100px}
+.course-price-big{font-family:'Bebas Neue',sans-serif;font-size:52px;color:var(--accent);line-height:1;margin-bottom:4px}
+.course-price-sub{font-size:13px;color:var(--muted);margin-bottom:24px}
+.course-includes{list-style:none;margin:24px 0;display:flex;flex-direction:column;gap:10px}
+.course-includes li{font-size:13px;color:var(--muted);display:flex;gap:10px}
+.course-includes li::before{content:'✓';color:var(--accent);font-weight:700;flex-shrink:0}
+.instructor-card{display:flex;gap:16px;align-items:center;padding:20px;background:var(--surface);border:1px solid var(--border);border-radius:8px;margin-top:32px}
+.instr-avatar{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#00f5a0,#006638);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.instr-name{font-size:15px;font-weight:600}
+.instr-role{font-size:12px;color:var(--muted)}
+.skill-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.skill-tag{background:var(--card);border:1px solid var(--border);color:var(--muted);font-size:12px;padding:6px 14px;border-radius:2px;font-family:'DM Mono',monospace}
+@media(max-width:900px){.course-layout{grid-template-columns:1fr;padding:40px 24px}.sticky-card{position:static}}
+</style>
+</head>
+<body>
+<div class="cursor-dot" id="dot"></div>
+<div class="cursor-ring" id="ring"></div>
+<nav>
+  <a href="index.html" class="logo">NEURO<span>LEAP</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="services.html">Services</a></li>
+    <li><a href="courses.html" class="active">Courses</a></li>
+    <li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="contact.html" class="nav-cta">Start Free →</a>
+</nav>
+
+<div style="background:var(--surface);padding:120px 60px 60px;border-bottom:1px solid var(--border);position:relative;overflow:hidden">
+  <div class="page-hero-bg"></div>
+  <div class="course-breadcrumb">
+    <a href="index.html">Home</a>›<a href="courses.html">Courses</a>›<span style="color:var(--accent)">Full-Stack Development</span>
+  </div>
+  <div class="section-label">Engineering · Beginner</div>
+  <h1 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(48px,6vw,80px);line-height:.95;max-width:800px;margin-bottom:20px;position:relative">FULL-STACK WEB<br>DEVELOPMENT <span style="color:var(--accent)">BOOTCAMP</span></h1>
+  <div class="course-meta-row" style="position:relative">
+    <span class="meta-chip">⏱ 6 Months</span>
+    <span class="meta-chip">📚 240 Hours</span>
+    <span class="meta-chip">🛠 8 Projects</span>
+    <span class="meta-chip">⭐ 4.9 (2,841 reviews)</span>
+    <span class="meta-chip">👥 18,420 enrolled</span>
+  </div>
+  <div class="instructor-card" style="max-width:400px;position:relative">
+    <div class="instr-avatar">👨‍💻</div>
+    <div><div class="instr-name">Rahul Desai</div><div class="instr-role">Ex-Senior Engineer @ Flipkart · 12 yrs exp</div></div>
+  </div>
+</div>
+
+<div class="course-layout">
+  <div>
+    <div class="tabs">
+      <div class="tab active" onclick="switchTab('overview',this)">Overview</div>
+      <div class="tab" onclick="switchTab('curriculum',this)">Curriculum</div>
+      <div class="tab" onclick="switchTab('instructor',this)">Instructor</div>
+      <div class="tab" onclick="switchTab('reviews',this)">Reviews</div>
+    </div>
+
+    <div id="tab-overview" class="tab-content active">
+      <h3 style="font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:1px;margin-bottom:16px">WHAT YOU'LL BUILD</h3>
+      <p style="color:var(--muted);font-size:15px;line-height:1.9;margin-bottom:24px">This bootcamp takes you from complete beginner to job-ready full-stack developer. You'll master the entire web development stack — frontend, backend, databases, and deployment — through 8 real-world projects reviewed by senior engineers.</p>
+      <div class="skill-tags">
+        <span class="skill-tag">HTML5</span><span class="skill-tag">CSS3</span><span class="skill-tag">JavaScript</span><span class="skill-tag">React</span><span class="skill-tag">Node.js</span><span class="skill-tag">Express</span><span class="skill-tag">PostgreSQL</span><span class="skill-tag">MongoDB</span><span class="skill-tag">REST APIs</span><span class="skill-tag">Git/GitHub</span><span class="skill-tag">AWS Deploy</span><span class="skill-tag">Docker</span>
+      </div>
+    </div>
+
+    <div id="tab-curriculum" class="tab-content">
+      <h3 style="font-family:'Bebas Neue',sans-serif;font-size:28px;letter-spacing:1px;margin-bottom:24px">COURSE MODULES</h3>
+      <div class="module" onclick="toggleModule(this)">
+        <div class="module-header"><span class="module-title">Module 1: Web Foundations</span><span class="module-meta">4 weeks · 16 lessons</span></div>
+        <div class="module-lessons">
+          <div class="lesson"><span class="lesson-icon">▶</span>HTML5 Semantic Structure</div>
+          <div class="lesson"><span class="lesson-icon">▶</span>CSS Grid & Flexbox Mastery</div>
+          <div class="lesson"><span class="lesson-icon">▶</span>Responsive Design Principles</div>
+          <div class="lesson"><span class="lesson-icon">🛠</span>Project: Personal Portfolio Site</div>
+        </div>
+      </div>
+      <div class="module" onclick="toggleModule(this)">
+        <div class="module-header"><span class="module-title">Module 2: JavaScript Deep Dive</span><span class="module-meta">6 weeks · 24 lessons</span></div>
+        <div class="module-lessons">
+          <div class="lesson"><span class="lesson-icon">▶</span>ES6+ Features & Async/Await</div>
+          <div class="lesson"><span class="lesson-icon">▶</span>DOM Manipulation & Events</div>
+          <div class="lesson"><span class="lesson-icon">▶</span>APIs & Fetch</div>
+          <div class="lesson"><span class="lesson-icon">🛠</span>Project: Weather Dashboard App</div>
+        </div>
+      </div>
+      <div class="module" onclick="toggleModule(this)">
+        <div class="module-header"><span class="module-title">Module 3: React & State Management</span><span class="module-meta">6 weeks · 22 lessons</span></div>
+        <div class="module-lessons">
+          <div class="lesson"><span class="lesson-icon">▶</span>React Components & Hooks</div>
+          <div class="lesson"><span class="lesson-icon">▶</span>Redux & Context API</div>
+          <div class="lesson"><span class="lesson-icon">🛠</span>Project: E-commerce Frontend</div>
+        </div>
+      </div>
+      <div class="module" onclick="toggleModule(this)">
+        <div class="module-header"><span class="module-title">Module 4: Node.js & Backend</span><span class="module-meta">6 weeks · 20 lessons</span></div>
+        <div class="module-lessons">
+          <div class="lesson"><span class="lesson-icon">▶</span>Node.js & Express REST APIs</div>
+          <div class="lesson"><span class="lesson-icon">▶</span>Authentication & JWT</div>
+          <div class="lesson"><span class="lesson-icon">🛠</span>Project: Full Blog API</div>
+        </div>
+      </div>
+      <div class="module" onclick="toggleModule(this)">
+        <div class="module-header"><span class="module-title">Module 5: Databases & Deployment</span><span class="module-meta">4 weeks · 16 lessons</span></div>
+        <div class="module-lessons">
+          <div class="lesson"><span class="lesson-icon">▶</span>PostgreSQL & MongoDB</div>
+          <div class="lesson"><span class="lesson-icon">▶</span>Docker & AWS Deployment</div>
+          <div class="lesson"><span class="lesson-icon">🏆</span>Capstone: Full-Stack SaaS App</div>
+        </div>
+      </div>
+    </div>
+
+    <div id="tab-instructor" class="tab-content">
+      <div style="display:flex;gap:24px;align-items:flex-start">
+        <div style="width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,#00f5a0,#006638);display:flex;align-items:center;justify-content:center;font-size:32px;flex-shrink:0">👨‍💻</div>
+        <div>
+          <h3 style="font-size:22px;font-weight:700;margin-bottom:4px">Rahul Desai</h3>
+          <p style="color:var(--accent);font-size:13px;margin-bottom:16px;font-family:'DM Mono',monospace">Ex-Senior Engineer @ Flipkart · 12 Years Experience</p>
+          <p style="color:var(--muted);font-size:14px;line-height:1.8">Rahul built Flipkart's real-time inventory system serving 500M+ users. He's taught 40,000+ students across 3 bootcamps and has a 4.97 average instructor rating. His teaching philosophy: "Build it before you understand it — understanding comes from doing."</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="tab-reviews" class="tab-content">
+      <div style="display:flex;align-items:center;gap:40px;margin-bottom:40px">
+        <div style="text-align:center"><div style="font-family:'Bebas Neue',sans-serif;font-size:72px;color:var(--accent);line-height:1">4.9</div><div style="color:#f59e0b;font-size:18px">★★★★★</div><div style="color:var(--muted);font-size:13px;margin-top:4px">2,841 reviews</div></div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:20px">
+        <div style="background:var(--card);border:1px solid var(--border);padding:24px;border-radius:8px"><div style="color:#f59e0b;margin-bottom:8px">★★★★★</div><p style="font-size:14px;color:var(--muted);line-height:1.8;margin-bottom:12px">"This course got me my first job offer in 5 months. The projects are real, the feedback is real, and the AI adaptation meant I never wasted time on stuff I already knew."</p><div style="font-size:13px;font-weight:600">Arjun S. — Software Developer, Bengaluru</div></div>
+        <div style="background:var(--card);border:1px solid var(--border);padding:24px;border-radius:8px"><div style="color:#f59e0b;margin-bottom:8px">★★★★★</div><p style="font-size:14px;color:var(--muted);line-height:1.8;margin-bottom:12px">"Rahul explains things the way senior engineers actually think. Not just 'what' but 'why' — that's what most courses miss completely."</p><div style="font-size:13px;font-weight:600">Sneha P. — Full-Stack Developer, Pune</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sticky-card reveal">
+    <div class="course-price-big">₹4,999</div>
+    <div class="course-price-sub">per month · cancel anytime</div>
+    <a href="contact.html" class="btn-primary" style="display:block;text-align:center;margin-bottom:12px">Enroll Now →</a>
+    <a href="contact.html" class="btn-ghost" style="display:block;text-align:center">Talk to Advisor</a>
+    <ul class="course-includes">
+      <li>240 hours of content</li>
+      <li>8 real-world projects</li>
+      <li>AI-adaptive pacing</li>
+      <li>4 mentor sessions/month</li>
+      <li>Cloud sandbox access</li>
+      <li>Verified certificate</li>
+      <li>Career Launch support</li>
+      <li>Lifetime alumni access</li>
+    </ul>
+    <div style="text-align:center;font-size:12px;color:var(--muted);margin-top:16px;padding-top:16px;border-top:1px solid var(--border)">🔒 30-day money-back guarantee</div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand"><a href="index.html" class="logo">NEURO<span>LEAP</span></a><p>Where neuroscience meets artificial intelligence to redefine how humans learn.</p></div>
+    <div class="footer-col"><h4>Platform</h4><a href="courses.html">All Courses</a><a href="services.html#mentorship">Live Sessions</a><a href="services.html#certificates">Certificates</a><a href="services.html#career">Career Launch</a></div>
+    <div class="footer-col"><h4>Company</h4><a href="about.html">About Us</a><a href="blog.html">Blog</a><a href="careers.html">Careers</a></div>
+    <div class="footer-col"><h4>Support</h4><a href="contact.html">Contact Us</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Use</a></div>
+  </div>
+  <div class="footer-bottom"><p>© 2025 NeuroLeap Technologies Pvt. Ltd.</p><div class="footer-socials"><a href="#" class="social-link">𝕏</a><a href="#" class="social-link">in</a><a href="#" class="social-link">▶</a><a href="#" class="social-link">ig</a></div></div>
+</footer>
+<script src="assets/shared.js"></script>
+<script>
+function switchTab(name,btn){
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('tab-'+name).classList.add('active');
+}
+function toggleModule(el){el.classList.toggle('open');}
+</script>
+</body>
+</html>

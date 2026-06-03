@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — NeuroLeap</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Grotesk:wght@300;400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/shared.css">
+<style>
+.timeline{position:relative;padding-left:40px;margin-top:40px}
+.timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:linear-gradient(180deg,var(--accent),var(--accent2),transparent)}
+.t-item{position:relative;margin-bottom:48px}
+.t-item::before{content:'';position:absolute;left:-46px;top:4px;width:12px;height:12px;border-radius:50%;background:var(--accent);border:2px solid var(--bg);box-shadow:0 0 12px rgba(0,245,160,.5)}
+.t-year{font-family:'DM Mono',monospace;font-size:12px;color:var(--accent);letter-spacing:2px;margin-bottom:6px}
+.t-title{font-size:18px;font-weight:600;margin-bottom:8px}
+.t-desc{font-size:14px;color:var(--muted);line-height:1.8}
+.values-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px}
+.value-card{background:var(--card);border:1px solid var(--border);padding:36px 28px;border-radius:8px;transition:all .3s}
+.value-card:hover{border-color:rgba(0,245,160,.25);transform:translateY(-4px)}
+.value-icon{font-size:32px;margin-bottom:16px}
+.value-title{font-family:'Bebas Neue',sans-serif;font-size:24px;letter-spacing:1px;margin-bottom:10px;color:var(--accent)}
+.value-desc{font-size:13px;color:var(--muted);line-height:1.8}
+.team-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.team-card{background:var(--card);border:1px solid var(--border);border-radius:8px;overflow:hidden;transition:all .3s;text-align:center}
+.team-card:hover{border-color:rgba(0,245,160,.2);transform:translateY(-4px)}
+.team-avatar{height:140px;display:flex;align-items:center;justify-content:center;font-size:52px}
+.ta1{background:linear-gradient(135deg,#0d1f0d,#0a1a2a)}
+.ta2{background:linear-gradient(135deg,#1a0d1a,#0d0d1f)}
+.ta3{background:linear-gradient(135deg,#1a1200,#0d0a00)}
+.ta4{background:linear-gradient(135deg,#001a1a,#000d1a)}
+.team-body{padding:20px}
+.team-name{font-size:16px;font-weight:600;margin-bottom:4px}
+.team-role{font-size:12px;color:var(--accent);letter-spacing:1px;text-transform:uppercase;font-family:'DM Mono',monospace}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.stat-big{font-family:'Bebas Neue',sans-serif;font-size:64px;color:var(--accent);line-height:1}
+.stat-big-label{font-size:14px;color:var(--muted);margin-top:4px}
+.stats-row{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--border);margin-top:60px}
+.stats-box{background:var(--bg);padding:40px 32px}
+.partner-logos{display:flex;flex-wrap:wrap;gap:16px;margin-top:32px}
+.partner-tag{background:var(--card);border:1px solid var(--border);padding:12px 20px;border-radius:4px;font-size:13px;font-weight:600;letter-spacing:1px;color:var(--muted)}
+@media(max-width:900px){.values-grid,.team-grid{grid-template-columns:1fr 1fr}.two-col{grid-template-columns:1fr}.stats-row{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+<div class="cursor-dot" id="dot"></div>
+<div class="cursor-ring" id="ring"></div>
+<nav>
+  <a href="index.html" class="logo">NEURO<span>LEAP</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html" class="active">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="courses.html">Courses</a></li>
+    <li><a href="blog.html">Blog</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+  <a href="contact.html" class="nav-cta">Start Free →</a>
+</nav>
+
+<div class="page-hero">
+  <div class="page-hero-bg"></div>
+  <div class="page-hero-glow"></div>
+  <div class="section-label">Our Story</div>
+  <h1 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(64px,8vw,110px);line-height:.9;position:relative">WE BUILD<br><span style="color:var(--accent)">FUTURE-PROOF</span><br>HUMANS</h1>
+  <p style="color:var(--muted);font-size:17px;max-width:560px;line-height:1.8;margin-top:24px;position:relative">NeuroLeap was born out of frustration with outdated learning systems that treat every brain as identical. We believe learning should adapt to you — not the other way around.</p>
+</div>
+
+<section style="background:var(--surface)">
+  <div class="two-col">
+    <div class="reveal">
+      <div class="section-label">Our Mission</div>
+      <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(40px,4vw,60px);line-height:.95;margin-bottom:24px">DEMOCRATIZE <span style="color:var(--accent)">WORLD-CLASS</span> EDUCATION</h2>
+      <p style="color:var(--muted);font-size:15px;line-height:1.9;margin-bottom:16px">We started in 2024 with a small team of neuroscientists, AI engineers, and educators who believed the education system was fundamentally broken. The problem wasn't the students — it was the delivery.</p>
+      <p style="color:var(--muted);font-size:15px;line-height:1.9;margin-bottom:32px">Today, NeuroLeap serves 2.4 million learners in 180+ countries with a platform that learns as you learn, adapts as you grow, and places you in careers that matter.</p>
+      <a href="courses.html" class="btn-primary">Start Your Journey →</a>
+    </div>
+    <div class="timeline reveal">
+      <div class="t-item"><div class="t-year">2022</div><div class="t-title">The Idea</div><div class="t-desc">Co-founders Aryan Kapoor & Dr. Meera Nair meet at IISc, Bangalore and begin research on AI-driven spaced repetition.</div></div>
+      <div class="t-item"><div class="t-year">2023</div><div class="t-title">First Prototype</div><div class="t-desc">NeuroSync™ v0.1 is tested with 500 beta users. Results show 3× faster concept mastery vs. traditional methods.</div></div>
+      <div class="t-item"><div class="t-year">Jan 2024</div><div class="t-title">Official Launch</div><div class="t-desc">NeuroLeap launches publicly with 12 courses. Within 90 days, 50,000 learners enrolled.</div></div>
+      <div class="t-item"><div class="t-year">2024</div><div class="t-title">Series A — $12M</div><div class="t-desc">Raised $12M led by Peak XV Partners. Expanded to 850+ courses and 180+ countries.</div></div>
+      <div class="t-item"><div class="t-year">2025</div><div class="t-title">2.4M Learners & Growing</div><div class="t-desc">240+ hiring partners, 97% completion rate, and a mission to reach 10M learners by 2027.</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="stats-row reveal">
+  <div class="stats-box"><div class="stat-big">2.4M</div><div class="stat-big-label">Active Learners Worldwide</div></div>
+  <div class="stats-box"><div class="stat-big">97%</div><div class="stat-big-label">Course Completion Rate</div></div>
+  <div class="stats-box"><div class="stat-big">180+</div><div class="stat-big-label">Countries Represented</div></div>
+  <div class="stats-box"><div class="stat-big">$12M</div><div class="stat-big-label">Series A Funding</div></div>
+</div>
+
+<section id="team" style="background:var(--bg)">
+  <div class="section-label">The People</div>
+  <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(48px,5vw,72px);line-height:.95;margin-bottom:56px">MEET OUR <span style="color:var(--accent)">TEAM</span></h2>
+  <div class="team-grid reveal">
+    <div class="team-card"><div class="team-avatar ta1">👨‍💻</div><div class="team-body"><div class="team-name">Aryan Kapoor</div><div class="team-role">CEO & Co-Founder</div></div></div>
+    <div class="team-card"><div class="team-avatar ta2">👩‍🔬</div><div class="team-body"><div class="team-name">Dr. Meera Nair</div><div class="team-role">CTO & Co-Founder</div></div></div>
+    <div class="team-card"><div class="team-avatar ta3">👨‍🎨</div><div class="team-body"><div class="team-name">Siddharth Rao</div><div class="team-role">Head of Design</div></div></div>
+    <div class="team-card"><div class="team-avatar ta4">👩‍💼</div><div class="team-body"><div class="team-name">Priya Khanna</div><div class="team-role">VP Growth</div></div></div>
+  </div>
+</section>
+
+<section style="background:var(--surface)" id="community">
+  <div class="section-label">Our Values</div>
+  <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(48px,5vw,72px);line-height:.95;margin-bottom:8px">WHAT WE <span style="color:var(--accent)">STAND FOR</span></h2>
+  <div class="values-grid reveal">
+    <div class="value-card"><div class="value-icon">🧠</div><div class="value-title">Brain-First Design</div><div class="value-desc">Every feature is grounded in cognitive science. We don't guess what works — we measure it.</div></div>
+    <div class="value-card"><div class="value-icon">🌍</div><div class="value-title">Radical Access</div><div class="value-desc">World-class education should not be gated by geography, privilege, or background. Period.</div></div>
+    <div class="value-card"><div class="value-icon">⚡</div><div class="value-title">Velocity Over Vanity</div><div class="value-desc">We obsess over outcomes — job placements, salary jumps, skill mastery — not vanity metrics.</div></div>
+    <div class="value-card"><div class="value-icon">🔬</div><div class="value-title">Evidence-Based</div><div class="value-desc">Our curriculum and methods are peer-reviewed and continuously validated against real-world performance.</div></div>
+    <div class="value-card"><div class="value-icon">🤝</div><div class="value-title">Community First</div><div class="value-desc">Learning is social. Our global study rooms and peer cohorts are core to the experience.</div></div>
+    <div class="value-card"><div class="value-icon">🛡️</div><div class="value-title">Learner Privacy</div><div class="value-desc">Your data teaches only your AI — never sold, never shared with advertisers. Ever.</div></div>
+  </div>
+</section>
+
+<section id="press" style="background:var(--bg)">
+  <div class="section-label">Trusted By</div>
+  <h2 style="font-family:'Bebas Neue',sans-serif;font-size:clamp(40px,4vw,60px);line-height:.95;margin-bottom:16px">OUR <span style="color:var(--accent)">HIRING PARTNERS</span></h2>
+  <p style="color:var(--muted);font-size:14px;margin-bottom:32px">240+ companies actively hire from NeuroLeap's talent pool</p>
+  <div class="partner-logos reveal">
+    <div class="partner-tag">Google</div><div class="partner-tag">Amazon</div><div class="partner-tag">Microsoft</div><div class="partner-tag">Infosys</div><div class="partner-tag">TCS</div><div class="partner-tag">Razorpay</div><div class="partner-tag">Zepto</div><div class="partner-tag">CRED</div><div class="partner-tag">Swiggy</div><div class="partner-tag">Meesho</div><div class="partner-tag">PhonePe</div><div class="partner-tag">Groww</div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand"><a href="index.html" class="logo">NEURO<span>LEAP</span></a><p>Where neuroscience meets artificial intelligence to redefine how humans learn, grow, and succeed.</p></div>
+    <div class="footer-col"><h4>Platform</h4><a href="courses.html">All Courses</a><a href="services.html#mentorship">Live Sessions</a><a href="services.html#adaptive">AI Mentorship</a><a href="services.html#certificates">Certificates</a><a href="services.html#career">Career Launch</a></div>
+    <div class="footer-col"><h4>Company</h4><a href="about.html">About Us</a><a href="about.html#team">Our Team</a><a href="blog.html">Blog</a><a href="careers.html">Careers</a><a href="about.html#press">Press</a></div>
+    <div class="footer-col"><h4>Support</h4><a href="contact.html">Help Center</a><a href="contact.html">Contact Us</a><a href="about.html#community">Community</a><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Use</a></div>
+  </div>
+  <div class="footer-bottom"><p>© 2025 NeuroLeap Technologies Pvt. Ltd.</p><div class="footer-socials"><a href="#" class="social-link">𝕏</a><a href="#" class="social-link">in</a><a href="#" class="social-link">▶</a><a href="#" class="social-link">ig</a></div></div>
+</footer>
+<script src="assets/shared.js"></script>
+</body>
+</html>
